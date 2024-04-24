@@ -35,7 +35,7 @@ make -j
 To Run:
 
 ```
-$ ./modelchecker [-pc][-acc] <AIGER_file> 
+$ ./modelchecker <AIGER_file> [-pc][-acc] 
 ```
 - -pc: enable push-success
 - -acc: enable assuption-core consistency
