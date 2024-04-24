@@ -1,17 +1,41 @@
 # FM-2024
 
+Artifacts of the paper 
+  *Accelerating IC3 via Generalization Refinements*
 
+## Usage
+---
+### 1. Modified IC3ref 
 
-Usage
-1. The modified IC3ref
 To build:
 
+```
 IC3ref/minisat$ make
-IC3ref/aiger$ ./configure.sh
-IC3ref/aiger$ make
 IC3ref$ make
+```
+
 To Run:
 
-$ ./IC3 [-br][-rs] <AIGER_file.aig> <OUTPUT_PATH>
--br: enable branching heuristic
--rs: enable refer-skipping heuristic
+```
+$ ./IC3 [-pc][-acc] < <AIGER_file> 
+```
+
+- -pc: enable push-success
+- -acc: enable assuption-core consistency
+
+### 2. Modelchecker
+
+To build:
+
+```
+./rebulid.sh
+make -j
+```
+
+To Run:
+
+```
+$ ./modelchecker [-pc][-acc] <AIGER_file> 
+```
+- -pc: enable push-success
+- -acc: enable assuption-core consistency
