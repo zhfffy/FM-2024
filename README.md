@@ -17,10 +17,10 @@ IC3ref$ make
 To Run:
 
 ```
-$ ./IC3 [-pc][-acc] < <AIGER_file> 
+$ ./IC3 [-sc][-acc] < <AIGER_file> 
 ```
 
-- -pc: enable push-success
+- -sc: enable safe sub-cube derivation
 - -acc: enable assuption-core consistency
 
 ### 2. Modelchecker
@@ -29,13 +29,14 @@ To build:
 
 ```
 ./rebulid.sh
+make clean
 make -j
 ```
 
 To Run:
 
 ```
-$ ./modelchecker <AIGER_file> [-pc][-acc] 
+$ ./modelchecker <AIGER_file> [-sc][-acc]
 ```
-- -pc: enable push-success
+- -sc: enable safe sub-cube derivation
 - -acc: enable assuption-core consistency

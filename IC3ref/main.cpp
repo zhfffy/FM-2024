@@ -51,7 +51,7 @@ int main(int argc, char ** argv) {
     else if (string(argv[i]) == "-aac") {
       preserve_unsat_core = true;
     }
-    else if (string(argv[i]) == "-pc") {
+    else if (string(argv[i]) == "-sc") {
       save_pre = true;
     }
     else if (string(argv[i]) == "-b")

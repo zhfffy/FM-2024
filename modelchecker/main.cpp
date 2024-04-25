@@ -15,23 +15,23 @@ int main(int argc, char **argv){
     cout<<"c USAGE: ./modelchecker <aig-file> [<option>|<property ID>]* "<<endl;
     Aiger *aiger = load_aiger_from_file(string(argv[1]));
     int property_index = 0;
-    bool pc = 0, acc = 0;
+    bool sc = 0, acc = 0;
     for (int i = 2; i < argc; ++i){
-        if (string(argv[i]) == "-pc")
-            pc = 1;
+        if (string(argv[i]) == "-sc")
+            sc = 1;
         else if (string(argv[i]) == "-acc")  
             acc = 1;
         else 
             property_index = (unsigned) atoi(argv[i]);
     }
     int nframes = 999;
-    PDR pdr(aiger, property_index, pc, acc);
+    PDR pdr(aiger, property_index, sc, acc);
     bool res = pdr.check();   
     cout << res << endl;
 
     //bmc_mixed_pdr
     // BMC bmc(aiger, property_index, 999);   
-    // PDR pdr(aiger, property_index, pc, acc);    
+    // PDR pdr(aiger, property_index, sc, acc);    
     // BMPDR bmpdr(&bmc, &pdr);
     // int res = bmpdr.check();
     // cout << res << endl;
